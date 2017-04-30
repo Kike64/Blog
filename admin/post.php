@@ -1,6 +1,6 @@
 <?php
 
-include_once '../config.php';
+
 $query = $pdo->prepare('SELECT * FROM blog_posts ORDER BY id DESC');
 $query->execute();
 
@@ -33,8 +33,8 @@ $blogPosts= $query->fetchAll(PDO::FETCH_ASSOC);
                 foreach ($blogPosts as $blogPost){
                     echo '<tr>';
                     echo '<td>'.$blogPost['title'].'</td>';
-                    echo '<td>Edit</td>>';
-                    echo '<td>Delete</td>>';
+                    echo '<td>Edit</td>';
+                    echo '<td>Delete</td>';
                     echo '</tr>';
                 }
                 ?>

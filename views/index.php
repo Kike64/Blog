@@ -1,12 +1,3 @@
-<?php
-
-include_once 'config.php';
-$query = $pdo->prepare('SELECT * FROM blog_posts ORDER BY id DESC');
-$query->execute();
-
-$blogPosts= $query->fetchAll(PDO::FETCH_ASSOC);
-?>
-
 <html>
 <head>
     <title>Blow With Platzi</title>
@@ -44,7 +35,7 @@ $blogPosts= $query->fetchAll(PDO::FETCH_ASSOC);
         <div class="col-md-12">
             <foot>
                 This is a footerbr <br>
-                <a href="admin/index.php">Admin Panel</a>
+                <a href="../admin/index.php">Admin Panel</a>
             </foot>
         </div>
 

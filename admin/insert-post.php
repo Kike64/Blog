@@ -1,6 +1,6 @@
 <?php
 
-include_once '../config.php';
+
 $result = false;
 
 if(!empty($_POST)){
@@ -29,7 +29,7 @@ if(!empty($_POST)){
         <div class="col-md-8">
             <h2>New Posts</h2>
             <p>
-                <a class="btn btn-default" href="post.php">Back</a>
+                <a class="btn btn-default" href="posts.php">Back</a>
             </p>
             <?php
                 if($result){
