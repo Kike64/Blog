@@ -36,7 +36,7 @@ if(!empty($_POST)){
                     echo '<div class="alert alert-success"> Post Saved!</div>  ';
                 }
             ?>
-            <form action="insert-post.php" method="post">
+            <form  method="post">
                 <div class="form-group">
                     <label for="inputTitle">Title</label>
                     <input type="text" class="form-control" name="title" id="inputTitle">
@@ -54,7 +54,7 @@ if(!empty($_POST)){
         <div class="col-md-12">
             <foot>
                 This is a footer <br>
-                <a href="admin/index.php">Admin Panel</a>
+                <a href="index.php">Admin Panel</a>
             </foot>
         </div>
 
