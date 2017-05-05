@@ -13,7 +13,7 @@
     <div class="row">
         <div class="col-md-8">
             <h2>Posts</h2>
-            <a class="btn btn-primary" href="<?php  echo BASE_URL; ?>admin/post/create"">New Post</a>
+            <a class="btn btn-primary" href="<?php  echo BASE_URL; ?>admin/post/create">New Post</a>
             <table class="table">
                 <tr>
                     <th>Title</th>

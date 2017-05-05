@@ -29,7 +29,7 @@ if(!empty($_POST)){
         <div class="col-md-8">
             <h2>New Posts</h2>
             <p>
-                <a class="btn btn-default" href="posts.php">Back</a>
+                <a class="btn btn-default" href="<?php  echo BASE_URL; ?>admin/post">Back</a>
             </p>
             <?php
                 if($result){
@@ -54,7 +54,7 @@ if(!empty($_POST)){
         <div class="col-md-12">
             <foot>
                 This is a footer <br>
-                <a href="index.php">Admin Panel</a>
+                <a href="<?php  echo BASE_URL; ?>admin/index">Admin Panel</a>
             </foot>
         </div>
 
