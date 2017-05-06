@@ -19,7 +19,6 @@ function render($fileName, $params = []){
     extract($params);
     include $fileName;
 
-
     return ob_get_clean();
 }
 
@@ -61,24 +60,21 @@ $router ->get('/admin/index', function () use ($pdo){
     return render('../views/admin/index.php', ['blogPosts' => $blogPosts]);
 });
 
-$router ->get('/admin/insert-post', function () use ($pdo){
-
-    $query = $pdo->prepare('SELECT * FROM blog_posts ORDER BY id DESC');
-    $query->execute();
-
-    $blogPosts= $query->fetchAll(PDO::FETCH_ASSOC);
-
-    return render('../views/admin/insert-post.php', ['blogPosts' => $blogPosts]);
-});
-
 $router ->get('/admin/post/create', function () use ($pdo){
 
-    $query = $pdo->prepare('SELECT * FROM blog_posts ORDER BY id DESC');
-    $query->execute();
+    return render('../views/admin/insert-post.php');
+});
 
-    $blogPosts= $query->fetchAll(PDO::FETCH_ASSOC);
+$router ->post('/admin/post/create', function () use ($pdo){
 
-    return render('../views/admin/insert-post.php', ['blogPosts' => $blogPosts]);
+
+        $sql='INSERT INTO blog_posts(title, content) VALUES (:title, :content)';
+        $query = $pdo->prepare($sql);
+        $result =$query->execute([
+            'title' => $_POST['title'],
+            'content' => $_POST['content']
+        ]);
+    return render('../views/admin/insert-post.php', ['result' => $result]);
 });
 
 $dispatcher = new Phroute\Phroute\Dispatcher($router->getData());

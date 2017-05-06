@@ -1,18 +1,3 @@
-<?php
-
-
-$result = false;
-
-if(!empty($_POST)){
-    $sql='INSERT INTO blog_posts(title, content) VALUES (:title, :content)';
-    $query = $pdo->prepare($sql);
-    $result =$query->execute([
-        'title' => $_POST['title'],
-        'content' => $_POST['content']
-    ]);
-}
-?>
-
 <html>
 <head>
     <title>Blow With Platzi</title>
@@ -32,7 +17,7 @@ if(!empty($_POST)){
                 <a class="btn btn-default" href="<?php  echo BASE_URL; ?>admin/post">Back</a>
             </p>
             <?php
-                if($result){
+                if(isset($result) && $result){
                     echo '<div class="alert alert-success"> Post Saved!</div>  ';
                 }
             ?>
