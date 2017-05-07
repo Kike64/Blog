@@ -12,11 +12,11 @@ class PostController{
 
         $blogPosts= $query->fetchAll(\PDO::FETCH_ASSOC);
 
-        return render('../views/admin/post.php', ['blogPosts' => $blogPosts]);
+        return render('../views/admin/post.twig', ['blogPosts' => $blogPosts]);
     }
 
     public function getCreate(){
-        return render('../views/admin/insert-post.php');
+        return render('../views/admin/insert-post.twig');
     }
 
     public function postCreate(){
@@ -28,6 +28,6 @@ class PostController{
             'title' => $_POST['title'],
             'content' => $_POST['content']
         ]);
-        return render('../views/admin/insert-post.php', ['result' => $result]);
+        return render('../views/admin/insert-post.twig', ['result' => $result]);
     }
 }

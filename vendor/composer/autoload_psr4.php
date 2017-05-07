@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
     'Phroute\\Phroute\\' => array($vendorDir . '/phroute/phroute/src/Phroute'),
     'App\\' => array($baseDir . '/app'),
 );
